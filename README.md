@@ -1,1 +1,2 @@
-# master
+# Welcome to phuocban's GitHub page
+My name is Phuoc Ban, I am currently a student at University of Information Technology - Vietnam National University, Ho Chi Minh City. My specialty is computer science. I am currently very interested in natural language processing and computer vision. This GitHub page is a sharing place for all the projects I've worked on. I look forward to receiving your comments and sharing.

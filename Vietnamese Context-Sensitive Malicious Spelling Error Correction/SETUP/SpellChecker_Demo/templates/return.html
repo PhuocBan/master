@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <title>Macilious Spell Checker</title>
+        <link rel="shortcut icon" type="image/png" href="static/images/icon_site.png"/>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="static/css/footer.css" />
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div>
+                <p></p>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <a href="https://phuocban.pythonanywhere.com/" title="Home">
+                        <img height="80" src="static/images/logo_small.png" alt="Malicious Spelling Error Correction For Vietnamese Comments">
+                    </a>
+                    
+                </div>
+                <div class="col-10">
+                    <div>
+                        <p></p>
+                    </div>
+                    <form class="input-group" method='POST'>
+                        {% csrf_token %}
+                        <input type="text" name="Sentence" class="form-control" autocomplete="off" placeholder="Enter a sentence" required>
+                        <button class="btn btn-outline-secondary" type="submit" value="Submit">Correct</button>   
+                    </form>
+                </div>
+            </div>
+            
+            <div>
+                <table class="table">
+                    <tbody>
+                      <tr>
+                        <!-- <th scope="row">1</th> -->
+                        <td>Input sentence</td>
+                        <td>{{origin}}</td>
+                        <!-- <td>nguyễn văn a <br> nguyễn văn </td> -->
+                      </tr>
+                      <tr>
+                        <!-- <th scope="row">2</th> -->
+                        <td>Output sentence</td>
+                        <td>{{correct}}</td>
+                      </tr>
+                      <tr>
+                        <!-- <th scope="row">3</th> -->
+                        <td>Detail</td>
+                        <td>
+                            {% for word in change %}
+                                {{word}} <br>
+                            {% endfor %}
+                        </td>
+                      </tr>
+                      <!-- <tr> -->
+                        <!-- <th scope="row">3</th> -->
+                        <!-- <td>Candidate corrections</td> -->
+                        <!-- <td> -->
+                            <!-- {% for d in detail %} -->
+                                <!-- {{d}} <br> -->
+                            <!-- {% endfor %} -->
+                        <!-- </td> -->
+                      <!-- </tr> -->
+                    </tbody>
+                  </table>
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid" style="background-color:#eff5f5;">
+        
+                    <button onclick="topFunction()" id="to-top" title="Go to top">Top</button>
+                
+                    <div class="row  row-no-gutters">
+                      <div class="col-xs-12 col-sm-6 col-md-2" >
+                        <p></p>
+                        <a class="center"><img height="150" src="static/images/scan_me.png" alt="Scan me"></a>       
+                      </div>     
+                
+                      <div class="col-xs-12 col-sm-6 col-md-4" >
+                        <ul>
+                          <li class="col-heading">About the Website</li>
+                          <li> <a href="https://www.dropbox.com/s/t2oz0r66fp4ok81/nics20.zip?dl=0&file_subpath=%2Fpapers%2Fp48-nguyen.pdf" >This is a research of</a></li>
+                          <li> <a href="https://www.uit.edu.vn/">VNUHCM-University of Information Technology</a> </li>
+                          <!-- <li>Link to page</li> -->
+                          <!-- <li>Link to page</li> -->
+                        </ul>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-2" >
+                        <p></p>
+                        <p></p>
+                        <a href="https://www.uit.edu.vn/" ><img height="130" src="static/images/uit.png" alt="Scan me"></a>       
+                      </div>       
+                
+                      <div class="col-xs-12 col-sm-6 col-md-4" >
+                        <ul>
+                          <li class="col-heading">About us</li>
+                          <li><a href="#">Student: Đào Phước Bản</a></li>
+                          <li><a href="#">Student: Nguyễn Thuỳ Linh</a></li>
+                          <li><a href="#">PhD: Nguyễn Lưu Thuỳ Ngân</a></li>
+                          <!-- <li><a href="#">Link to page</a></li> -->
+                        </ul>
+                      </div>
+
+  
+                      
+                    </div> <!--  end row  -->
+                
+                  </div> <!--  end container-fluid  -->
+            </footer>
+
+            
+        </div>
+
+        <script>
+            // Script from W3 Schools  
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("to-top").style.display = "block";
+              } else {
+                document.getElementById("to-top").style.display = "none";
+              }
+            }
+            
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+        </script>
+
+    </body>
+</html>
